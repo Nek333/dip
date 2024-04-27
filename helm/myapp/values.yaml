@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: nek33/myapp
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: ClusterIP
+
+database:
+  host: myapp-db
+  name: tutorial-dev
+  user: vinhle
+  password: password
+
+postgresql:
+  image: postgres:13-alpine
+  user: vinhle
+  password: password
+  db: tutorial-dev
+
